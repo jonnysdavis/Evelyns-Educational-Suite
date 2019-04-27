@@ -1,7 +1,9 @@
 from tkinter import *
-
+from Student import *
 from tkinter import Menu
 
+attributeList = [""] #Student attributes to help with organzation, such as reading level or math level
+roster = [Student]
 
 window = Tk()
 window.title("Evelyn's Educational Suite")
