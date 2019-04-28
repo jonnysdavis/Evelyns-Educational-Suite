@@ -9,6 +9,9 @@ firstName = ""
 rosterID = 0
 
 
+
+
+
 class Student(object):
 
     def __init__(last,first,class_period_arg):
@@ -27,7 +30,6 @@ class Student(object):
         lastName = last
         firstName = first
 
-
-
-
+    def getRoster(self):
+        return rosterID
 

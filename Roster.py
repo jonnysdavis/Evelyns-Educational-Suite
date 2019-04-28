@@ -22,7 +22,7 @@ class Roster(object):
     def addBan(Student):
         banList.append(Student)
 
-    def setRoster(name):
+    def setRosterName(name):
         rosterID = name
 
     def addStudent(pupil):

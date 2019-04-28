@@ -79,12 +79,23 @@ def save():
     button = Button(top, text="OK", command=top.destroy)
     button.pack()
 
-def addStudent():
+def addStudent(last,first,roster):
     newStudent = Student("last","first","roster ID")
-    rosterList[0].addStudent(newStudent) #0 needs to eb replaced with finding the students roster
+    rosterList[0].addStudent(newStudent) #0 needs to be replaced with finding the students roster
     print()
 
+def newRoster(id):
+    newClass = Roster
+    newClass.setRosterName(id)
+    rosterList.append(newClass)
+
+def enrollStudent(newStudent):
+    pupil = Student
+    rosterList[pupil.getRoster()].addStudent(pupil)
+
+
 def gracefulExit():
+    save()
     exit()
 
 
