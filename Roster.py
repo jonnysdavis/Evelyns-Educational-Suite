@@ -1,11 +1,14 @@
 #Created by Jonathan Davis. All rights reservered, 2019.
-#This class is an object to contain Student info when using them during the program
 
+#A roster is a collection of students, as well as the attributes of of that class.
+#The same student can be in multiple rosters because a teacher may have the student in different classes throughout the day
 
+from Student import *
 
-banList = []  # A List of all the students the student in question should not work with
+studentList = [Student]
+attributeList = []
 
-class Student(object):
+class Roster(object):
     lastName = ""
     firstName = ""
     class_period = 0
