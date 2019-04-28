@@ -23,27 +23,42 @@ def createMenuBar():
 
     rosterMenu = Menu(menu) #Create Roster Dropdown
     rosterMenu.add_command(label="New Roster", command=about)
+    rosterMenu.add_command(label="Edit Roster", command=about)
+    rosterMenu.add_command(label="Display Roster", command=about)
+    rosterMenu.add_command(label="Import Roster", command=about)
+    rosterMenu.add_command(label="Export Roster", command=about)
     menu.add_cascade(label='Roster', menu=rosterMenu)  # Creates new file-menu column
 
     studentMenu = Menu(menu)  # Create student Dropdown
     menu.add_cascade(label='Students', menu=studentMenu)
+    studentMenu.add_command(label="Add Pupil", command=about)
+    studentMenu.add_command(label="Edit Pupil", command=about)
+    studentMenu.add_command(label="Add Pupil Attribute", command=about)
+    studentMenu.add_command(label="Import Pupil", command=about)
+    studentMenu.add_command(label="Export Pupil", command=about)
 
     groupMenu = Menu(menu)  # Create group Dropdown
     menu.add_cascade(label='Groups', menu=groupMenu)
+    groupMenu.add_command(label="New Groups", command=about)
+    groupMenu.add_command(label="Re-Use Group", command=about)
+    groupMenu.add_command(label="Import Group", command=about)
+    groupMenu.add_command(label="Export Group", command=about)
 
     subMenu = Menu(menu)  # Create sub Dropdown
     menu.add_cascade(label='Substitutes', menu=subMenu)
-
-    rosterMenu = Menu(menu)  # Create roster Dropdown
-    menu.add_cascade(label='Roster', menu=rosterMenu)
+    subMenu.add_command(label="New Plan", command=about)
+    subMenu.add_command(label="Load Plan", command=about)
+    subMenu.add_command(label="Edit Info", command=about)
 
     donateMenu = Menu(menu)  # Create donate Dropdown
+    donateMenu.add_command(label="Donate", command=about)
+    donateMenu.add_command(label="Share", command=about)
     menu.add_cascade(label='Donate', menu=donateMenu)
 
     window.config(menu=menu)  # End and Display Menu Bar
 
 
-#Information about the program
+#Information about the program and its inspiration
 def about():
     top = Toplevel()
     top.title("About")
@@ -63,6 +78,7 @@ def save():
     msg.pack()
     button = Button(top, text="OK", command=top.destroy)
     button.pack()
+
 
 def gracefulExit():
     exit()
