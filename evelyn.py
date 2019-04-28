@@ -1,4 +1,4 @@
-#Created by Jonathan Davis. All rights reservered, 2019.
+#Created by Jonathan Davis. All rights reserved, 2019.
 #Named after the passionate educator who inspired this creation, who also suggested the tools. Your students are lucky to have you.
 
 from tkinter import *
@@ -72,19 +72,23 @@ def about():
 
 #Currently does nothing as program has no database yet
 def save():
-    top = Toplevel()
+    top = Toplevel() #Create pop-up
     top.title("Save")
     msg = Message(top, text="Your changes have been saved.")
     msg.pack()
     button = Button(top, text="OK", command=top.destroy)
     button.pack()
 
+def addStudent():
+    newStudent = Student("last","first","roster ID")
+    rosterList[0].addStudent(newStudent) #0 needs to eb replaced with finding the students roster
+    print()
 
 def gracefulExit():
     exit()
 
 
-#Code to run program
+
 window = Tk()
 window.title("Evelyn's Educational Suite")
 createMenuBar()

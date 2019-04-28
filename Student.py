@@ -1,15 +1,15 @@
-#Created by Jonathan Davis. All rights reservered, 2019.
+#Created by Jonathan Davis. All rights reserved, 2019.
 #This class is an object to contain Student info when using them during the program
 
 
 
 banList = []  # A List of all the students the student in question should not work with
+lastName = ""
+firstName = ""
+rosterID = 0
+
 
 class Student(object):
-    lastName = ""
-    firstName = ""
-    class_period = 0
-    grade = 0
 
     def __init__(last,first,class_period_arg):
         lastName = last
@@ -22,6 +22,10 @@ class Student(object):
 
     def addBan(Student):
         banList.append(Student)
+
+    def nameStudent (last,first):
+        lastName = last
+        firstName = first
 
 
 
