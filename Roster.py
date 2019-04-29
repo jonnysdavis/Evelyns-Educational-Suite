@@ -15,12 +15,12 @@ class Roster(object):
         firstName = first
         class_period = class_period_arg
 
-    def addAttrbuteAll(attribute,roster): #Add an attribute to each student
+    def addAttrbuteAll(self,attribute,defualtScore,roster): #Add an attribute to each student
         for Student in roster:
-            tempStudent = Student
+            Student.addAttrbute(Student, attribute, defualtScore)
 
-    def addBan(Student):
-        banList.append(Student)
+    def addBan(student):
+        student.addBan()
 
     def setRosterName(name):
         rosterID = name
