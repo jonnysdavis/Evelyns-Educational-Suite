@@ -16,13 +16,13 @@ def createMenuBar():
     How to link file menu option to command
     rosterMenu.add_command(label="About...", command=about)
     '''
-    fileMenu = Menu(menu) #Create File Dropdown
+    fileMenu = Menu(menu,tearoff=False) #Create File Dropdown
     fileMenu.add_command(label='About', command=about)  # Add option to current file-menu column
     fileMenu.add_command(label='Save' , command=save)
     fileMenu.add_command(label='Exit' , command = gracefulExit)
     menu.add_cascade(label='File', menu=fileMenu)  # Creates new file-menu column
 
-    rosterMenu = Menu(menu) #Create Roster Dropdown
+    rosterMenu = Menu(menu,tearoff=False) #Create Roster Dropdown
     rosterMenu.add_command(label="New Roster", command=about)
     rosterMenu.add_command(label="Edit Roster", command=about)
     rosterMenu.add_command(label="Display Roster", command=about)
@@ -30,7 +30,7 @@ def createMenuBar():
     rosterMenu.add_command(label="Export Roster", command=about)
     menu.add_cascade(label='Roster', menu=rosterMenu)  # Creates new file-menu column
 
-    studentMenu = Menu(menu)  # Create student Dropdown
+    studentMenu = Menu(menu,tearoff=False)  # Create student Dropdown
     menu.add_cascade(label='Students', menu=studentMenu)
     studentMenu.add_command(label="Add Pupil", command=about)
     studentMenu.add_command(label="Edit Pupil", command=about)
@@ -38,20 +38,20 @@ def createMenuBar():
     studentMenu.add_command(label="Import Pupil", command=about)
     studentMenu.add_command(label="Export Pupil", command=about)
 
-    groupMenu = Menu(menu)  # Create group Dropdown
+    groupMenu = Menu(menu,tearoff=False)  # Create group Dropdown
     menu.add_cascade(label='Groups', menu=groupMenu)
     groupMenu.add_command(label="New Groups", command=about)
     groupMenu.add_command(label="Re-Use Group", command=about)
     groupMenu.add_command(label="Import Group", command=about)
     groupMenu.add_command(label="Export Group", command=about)
 
-    subMenu = Menu(menu)  # Create sub Dropdown
+    subMenu = Menu(menu,tearoff=False)  # Create sub Dropdown
     menu.add_cascade(label='Substitutes', menu=subMenu)
     subMenu.add_command(label="New Plan", command=about)
     subMenu.add_command(label="Load Plan", command=about)
     subMenu.add_command(label="Edit Info", command=about)
 
-    donateMenu = Menu(menu)  # Create donate Dropdown
+    donateMenu = Menu(menu,tearoff=False)  # Create donate Dropdown
     donateMenu.add_command(label="Donate", command=donate)
     donateMenu.add_command(label="Share", command=share)
     menu.add_cascade(label='Donate', menu=donateMenu)
