@@ -5,6 +5,7 @@ from tkinter import *
 from Student import *
 from Roster import *
 from tkinter import Menu
+import webbrowser
 
 rosterList = [Roster]
 studentList = [Student]
@@ -51,8 +52,8 @@ def createMenuBar():
     subMenu.add_command(label="Edit Info", command=about)
 
     donateMenu = Menu(menu)  # Create donate Dropdown
-    donateMenu.add_command(label="Donate", command=about)
-    donateMenu.add_command(label="Share", command=about)
+    donateMenu.add_command(label="Donate", command=donate)
+    donateMenu.add_command(label="Share", command=share)
     menu.add_cascade(label='Donate', menu=donateMenu)
 
     window.config(menu=menu)  # End and Display Menu Bar
@@ -98,9 +99,16 @@ def gracefulExit():
     save()
     exit()
 
+def share():
+    url = "https://github.com/jonnysdavis/Evelyns-Educational-Suite"
+    webbrowser.open_new(url)
 
+def donate():
+    url = "https://supporters.eff.org/donate/join-4"
+    webbrowser.open_new(url)
 
 window = Tk()
+window.geometry('700x300')
 window.title("Evelyn's Educational Suite")
 createMenuBar()
 
