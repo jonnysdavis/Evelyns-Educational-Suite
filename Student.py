@@ -1,16 +1,11 @@
 #Created by Jonathan Davis. All rights reserved, 2019.
 #This class is an object to contain Student info when using them during the program
 
-
-
 banList = []  # A List of all the students the student in question should not work with
+attributeList = ["",""]
 lastName = ""
 firstName = ""
 rosterID = 0
-
-
-
-
 
 class Student(object):
 
@@ -19,9 +14,8 @@ class Student(object):
         firstName = first
         class_period = class_period_arg
 
-    def addAttrbuteAll(attribute,roster): #Add an attribute to each student
-        for Student in roster:
-            tempStudent = Student
+    def addAttrbute(self, skill, score): #Add an attribute to each student
+        attributeList.append(skill, score)
 
     def addBan(Student):
         banList.append(Student)
