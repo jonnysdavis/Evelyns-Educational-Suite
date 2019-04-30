@@ -20,6 +20,7 @@ def createMenuBar():
     fileMenu.add_command(label='About', command=about)  # Add option to current file-menu column
     fileMenu.add_command(label='Save' , command=save)
     fileMenu.add_command(label='Exit' , command = gracefulExit)
+    fileMenu.add_command(label='Check for Updates', command=checkUpdate)
     menu.add_cascade(label='File', menu=fileMenu)  # Creates new file-menu column
 
     rosterMenu = Menu(menu,tearoff=False) #Create Roster Dropdown
@@ -100,6 +101,13 @@ def donate():
     url = "https://supporters.eff.org/donate/join-4"
     webbrowser.open_new(url)
 
+def checkUpdate():
+    top = Toplevel()
+    top.title("Check for Updates")
+    msg = Message(top, text="You have the most up to date version.")
+    msg.pack()
+    button = Button(top, text="OK", command=top.destroy)
+    button.pack()
 
 window = Tk()
 window.geometry('700x300')

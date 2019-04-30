@@ -4,8 +4,14 @@
 
 from Student import *
 
-studentList = [Student]
-
+students = [Student]
+groupBans = []
+groupName = "?"
+sizeMax = 999
+sizeMin = 0
+size = 0
 
 
 class Group(object):
+    def __init__(self):
+        print()
