@@ -80,11 +80,6 @@ def save():
     button = Button(top, text="OK", command=top.destroy)
     button.pack()
 
-def addStudent(last,first,roster):
-    newStudent = Student("last","first","roster ID")
-    rosterList[0].addStudent(newStudent) #0 needs to be replaced with finding the students roster
-    print()
-
 def newRoster(id):
     newClass = Roster
     newClass.setRosterName(id)
@@ -94,9 +89,7 @@ def enrollStudent(newStudent):
     pupil = Student
     rosterList[pupil.getRoster()].addStudent(pupil)
 
-
 def gracefulExit():
-    save()
     exit()
 
 def share():
@@ -106,6 +99,7 @@ def share():
 def donate():
     url = "https://supporters.eff.org/donate/join-4"
     webbrowser.open_new(url)
+
 
 window = Tk()
 window.geometry('700x300')
