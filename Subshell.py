@@ -1,13 +1,9 @@
-
-from docx import Document
+import tkinter
+import Evelyn
+import docx
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 import easygui
-import json
-
-
-document = Document()
-jsonInfo = {"a", "b", "c", "d"}
 # Switching to 1 enable a GUI input
 guiInput = 1
 startTimes = []

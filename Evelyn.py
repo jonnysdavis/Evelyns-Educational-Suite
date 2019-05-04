@@ -57,6 +57,12 @@ def createMenuBar():
     donateMenu.add_command(label="Share", command=share)
     menu.add_cascade(label='Donate', menu=donateMenu)
 
+    moreTool = Menu(menu, tearoff=False)  # Create Other Tools Dropdown
+    moreTool.add_command(label="Visual Timer", command=visualTimer)
+    moreTool.add_command(label="New Functional Behavioral Assessment", command=newFba)
+    moreTool.add_command(label="Book Scheduler", command=readTimeGuess)
+    menu.add_cascade(label='More Tools', menu=moreTool)
+
     window.config(menu=menu)  # End and Display Menu Bar
 
 
@@ -81,6 +87,16 @@ def save():
     button = Button(top, text="OK", command=top.destroy)
     button.pack()
 
+def newFba():
+    print("needs to enter a new functional behvarioal assesment for a student and log it")
+
+def visualTimer():
+    print("create a visually friendly and kid friendly timer based on hannah's large red circle timer")
+
+def readTimeGuess():
+    print("user input total number of pages/chapters of a book and a number of instrucitonal days/minutes"
+          "the output is a schedule for the number of pages to be read per day. Export as PDF or something shareable.")
+
 def newRoster(id):
     newClass = Roster
     newClass.setRosterName(id)
@@ -88,7 +104,6 @@ def newRoster(id):
 
 def enrollStudent(newStudent):
     pupil = Student
-    rosterList[pupil.getRoster()].addStudent(pupil)
 
 def gracefulExit():
     exit()
@@ -103,11 +118,20 @@ def donate():
 
 def checkUpdate():
     top = Toplevel()
-    top.title("Check for Updates")
+    top.geometry('150x75')
+    top.title("Updates")
     msg = Message(top, text="You have the most up to date version.")
     msg.pack()
     button = Button(top, text="OK", command=top.destroy)
     button.pack()
+
+def getRosterList():
+    return rosterList
+
+def setRosterList(newRosterList):
+    rosterList = newRosterList
+
+
 
 window = Tk()
 window.geometry('700x300')
