@@ -2,15 +2,15 @@
 #Named after the passionate educator who inspired this creation, who also suggested the tools. Your students are lucky to have you.
 
 from tkinter import *
-from Student import *
 from Roster import *
 from tkinter import Menu
 import webbrowser
+import VisualTimer
 
 rosterList = [Roster]
 studentList = [Student]
 
-def createMenuBar():
+def createMenuBar(window):
     menu = Menu(window)  # Start Menu Bar
     '''
     How to link file menu option to command
@@ -66,6 +66,8 @@ def createMenuBar():
     window.config(menu=menu)  # End and Display Menu Bar
 
 
+
+
 #Information about the program and its inspiration
 def about():
     top = Toplevel()
@@ -94,13 +96,15 @@ def visualTimer():
     print("create a visually friendly and kid friendly timer based on hannah's large red circle timer")
 
 def readTimeGuess():
-    print("user input total number of pages/chapters of a book and a number of instrucitonal days/minutes"
-          "the output is a schedule for the number of pages to be read per day. Export as PDF or something shareable.")
+    pass
 
 def newRoster(id):
     newClass = Roster
     newClass.setRosterName(id)
     rosterList.append(newClass)
+
+def addRoster(new):
+    rosterList.append(new)
 
 def enrollStudent(newStudent):
     pupil = Student
@@ -131,12 +135,28 @@ def getRosterList():
 def setRosterList(newRosterList):
     rosterList = newRosterList
 
+def newYesPopUp(newTitle, message, buttonText):
+    top = Toplevel()
+    top.title(newTitle)
+    msg = Message(top, text=message)
+    msg.pack()
+    button = Button(top, text=buttonText, command=top.destroy)
+    button.pack()
+    return top
 
 
-window = Tk()
-window.geometry('700x300')
-window.title("Evelyn's Educational Suite")
-createMenuBar()
+
+baseWindow = Tk()
+baseWindow.geometry('700x300')
+baseWindow.title("Evelyn's Educational Suite")
+createMenuBar(baseWindow)
+deleteMe = Student()
+
+studentList.append(Student.consoleCreateStudent(Student))
+print(studentList[0].getFullName())
 
 
-window.mainloop() #Forever loop to keep window open, breaking loop closes program
+
+
+
+baseWindow.mainloop() #Forever loop to keep window open, breaking loop closes program
