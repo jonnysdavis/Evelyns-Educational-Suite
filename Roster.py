@@ -8,6 +8,7 @@ from Student import *
 studentList = [Student]
 attributeList = []
 rosterID = "0"
+rosterName = ""
 bannedPairs = [[Student],[Student]] ## Each index includes two people who shouldn't work together
 
 class Roster(object):
@@ -28,4 +29,10 @@ class Roster(object):
 
     def addStudent(pupil):
         studentList.append(pupil)
+
+    def consoleCreateRoster(self):
+        rosterID = input("Roster Name: ")
+        firstName = input("Roster ID: ")
+        tempRoster = Roster(lastName, firstName)
+        return tempRoster
 
